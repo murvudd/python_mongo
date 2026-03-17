@@ -38,10 +38,11 @@ push:
 
 # 4. Git commit i tag
 git-tag:
-	@echo "Creating Git tag for version $(NEXT_VERSION)..."
+	#$(CURRENT_VERSION) is evaluated from VERSION file, if release bump has happened. if tagging raw, takes current ver.
+	@echo "Creating Git tag for version $(CURRENT_VERSION)..."
 	git add $(VERSION_FILE)
-	git commit -m "Bump version to $(NEXT_VERSION)"
-	git tag -a "v$(NEXT_VERSION)" -m "Release version $(NEXT_VERSION)"
+	git commit -m "Bump version to $(CURRENT_VERSION)"
+	git tag -a "v$(CURRENT_VERSION)" -m "Release version $(CURRENT_VERSION)"
 	@echo "Don't forget to run 'git push origin main --tags'"
 	git push
 	git push --tags
