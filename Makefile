@@ -27,6 +27,7 @@ bump:
 push:
 	@echo "Tagging and pushing version $(CURRENT_VERSION)..."
 	docker tag $(IMAGE_NAME):$(CURRENT_VERSION) $(IMAGE_NAME):latest
+	docker tag $(IMAGE_NAME):$(CURRENT_VERSION) $(IMAGE_NAME_UND):$(CURRENT_VERSION)
 	docker tag $(IMAGE_NAME_UND):$(CURRENT_VERSION) $(IMAGE_NAME_UND):latest
 
 	docker push $(IMAGE_NAME):$(CURRENT_VERSION)
