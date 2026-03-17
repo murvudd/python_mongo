@@ -1,5 +1,7 @@
 # Konfiguracja
 IMAGE_NAME := murvudd/python-mongo
+IMAGE_NAME_UND := murvudd/python_mongo
+
 VERSION_FILE := VERSION
 CURRENT_VERSION := $(shell cat $(VERSION_FILE))
 
@@ -25,8 +27,13 @@ bump:
 push:
 	@echo "Tagging and pushing version $(CURRENT_VERSION)..."
 	docker tag $(IMAGE_NAME):$(CURRENT_VERSION) $(IMAGE_NAME):latest
+	docker tag $(IMAGE_NAME_UND):$(CURRENT_VERSION) $(IMAGE_NAME_UND):latest
+
 	docker push $(IMAGE_NAME):$(CURRENT_VERSION)
+	docker push $(IMAGE_NAME_UND):$(CURRENT_VERSION)
+
 	docker push $(IMAGE_NAME):latest
+	docker push $(IMAGE_NAME_UND):latest
 
 # 4. Git commit i tag
 git-tag:
