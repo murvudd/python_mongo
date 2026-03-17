@@ -14,13 +14,14 @@
 
 FROM murvudd/ubuntu-python:latest
 
-copy ./ .
-
 RUN apt update && apt upgrade -y
 RUN apt install curl -y
 RUN apt install mongodb-clients -y
 RUN apt install zip -y
 
+copy ./ .
+COPY LICENSE /licenses/LICENSE
+COPY NOTICE /licenses/NOTICE
 
 RUN pip3 install -r requirements.txt
 
