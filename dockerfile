@@ -1,4 +1,20 @@
+# Copyright 2026 Michał Trojnarski Full Stack Ai trojnarski.michal@gmail.com
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 FROM murvudd/ubuntu-python:latest
+
+copy ./ .
 
 RUN apt update && apt upgrade -y
 RUN apt install curl -y
@@ -6,16 +22,7 @@ RUN apt install mongodb-clients -y
 RUN apt install zip -y
 
 
-RUN pip3 install awscli==1.16.142
-RUN pip3 install certifi==2019.3.9
-RUN pip3 install chardet==3.0.4
-RUN pip3 install colorama==0.3.9
-RUN pip3 install idna==2.8
-RUN pip3 install pyasn1==0.4.5
-RUN pip3 install PyYAML==3.13
-RUN pip3 install rsa==3.4.2
-RUN pip3 install urllib3==1.24.1
-RUN pip3 install virtualenv==16.4.3
-RUN pip3 install pymongo
-RUN pip3 install azure
-RUN pip3 install pandas
+RUN pip3 install -r requirements.txt
+
+
+ENTRYPOINT /bin/bash
