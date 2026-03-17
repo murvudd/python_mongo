@@ -1,5 +1,5 @@
 # Konfiguracja
-IMAGE_NAME := murvudd/python_mongo
+IMAGE_NAME := murvudd/python-mongo
 VERSION_FILE := VERSION
 CURRENT_VERSION := $(shell cat $(VERSION_FILE))
 
@@ -30,11 +30,13 @@ push:
 
 # 4. Git commit i tag
 git-tag:
-	@echo "Creating Git tag for version $(NEW_VERSION)..."
+	@echo "Creating Git tag for version $(NEXT_VERSION)..."
 	git add $(VERSION_FILE)
-	git commit -m "Bump version to $(NEW_VERSION)"
-	git tag -a v$(NEW_VERSION) -m "Release version $(NEW_VERSION)"
+	git commit -m "Bump version to $(NEXT_VERSION)"
+	git tag -a "v$(NEXT_VERSION)" -m "Release version $(NEXT_VERSION)"
 	@echo "Don't forget to run 'git push origin main --tags'"
+	git push
+	git push --tags
 
 # 5. Pełny cykl: build -> tag/push -> bump wersji na następny raz
 release: bump build push git-tag

@@ -2,15 +2,24 @@
 ## with Azure blob storage, and AWS CLI.
 
 
-### Dockerhub:
+### docker image: 
+    `murvudd/python-mongo:latest`
+    
+    https://hub.docker.com/repository/docker/murvudd/python-mongo
 
-docker image: `murvudd/python-mongo:latest`
-https://hub.docker.com/repository/docker/murvudd/python-mongo
+### build:
 
-### build and push
+```bash
 make
-
 ```
+
+### deploy:
+
+```bash
+make release
+```
+
+
 # Copyright 2026 Michał Trojnarski Full Stack Ai trojnarski.michal@gmail.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
