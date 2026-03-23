@@ -25,7 +25,7 @@ python-dateutil==2.9.0.post0
 pytz==2026.1.post1
 pyxdg==0.25
 PyYAML==5.4.1
-requests==2.27.1
+requests==2.32.4
 requests-oauthlib==2.0.0
 rsa==4.7.2
 s3transfer==0.5.2
