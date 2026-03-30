@@ -20,7 +20,7 @@ pandas==1.1.5
 pyasn1==0.5.1
 pycrypto==2.6.1
 pygobject==3.26.1
-pymongo==4.1.1
+pymongo==4.6.3
 python-dateutil==2.9.0.post0
 pytz==2026.1.post1
 pyxdg==0.26
