@@ -17,7 +17,7 @@ msrest==0.7.1
 numpy==1.19.5
 oauthlib==3.2.2
 pandas==1.1.5
-pyasn1==0.5.1
+pyasn1==0.6.3
 pycrypto==2.6.1
 pygobject==3.26.1
 pymongo==4.6.3
