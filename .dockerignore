@@ -1,3 +1,6 @@
 .gitignore
 dockerfile
 Makefile
+.idea/
+*.egg-info/
+uv.lock

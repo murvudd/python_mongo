@@ -1,0 +1,14 @@
+[project]
+name = "python-mongo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "awscli>=1.44.68",
+    "azure-core>=1.39.0",
+    "azure-storage-blob>=12.28.0",
+    "numpy>=2.4.4",
+    "pandas>=3.0.1",
+    "pymongo>=4.16.0",
+]

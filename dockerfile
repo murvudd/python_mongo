@@ -12,14 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM murvudd/ubuntu-python:latest
+#debian bookworm
+FROM python:3.14-slim-bookworm
 
 RUN apt update && apt upgrade -y
 RUN apt install curl -y
-RUN apt install mongodb-clients -y
+#RUN apt install mongodb-clients -y
 RUN apt install zip -y
 
-copy ./ .
+COPY ./ .
 COPY LICENSE /licenses/LICENSE
 COPY NOTICE /licenses/NOTICE
 
