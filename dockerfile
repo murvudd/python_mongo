@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#debian bookworm
-FROM python:3.14-slim-bookworm
+#apline
+FROM python:3.14-alpine
 
-RUN apt update && apt upgrade -y
-RUN apt install curl -y
-#RUN apt install mongodb-clients -y
-RUN apt install zip -y
+RUN apk update 
+RUN apk upgrade
+RUN apk add curl
+RUN apk add zip
+RUN apk add mongodb-tools
 
 COPY ./ .
 COPY LICENSE /licenses/LICENSE
